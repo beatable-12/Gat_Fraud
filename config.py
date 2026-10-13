@@ -1,0 +1,22 @@
+from pathlib import Path
+
+SEED = 42
+DEFAULT_TRANSACTIONS = 2_400
+ACCOUNT_COUNT = 180
+MAX_NEIGHBORS_PER_ENDPOINT = 12
+TRAIN_FRACTION = 0.70
+VALIDATION_FRACTION = 0.15
+HIDDEN_CHANNELS = 16
+ATTENTION_HEADS = 2
+EPOCHS = 8
+BATCH_SIZE = 32
+LEARNING_RATE = 0.003
+WEIGHT_DECAY = 1e-4
+
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data" / "generated"
+MODEL_DIR = ROOT / "artifacts"
+DATASET_PATH = DATA_DIR / "transactions.csv"
+MODEL_PATH = MODEL_DIR / "gatv2_model.pt"
+METADATA_PATH = MODEL_DIR / "model_metadata.json"
+PREDICTIONS_PATH = MODEL_DIR / "test_predictions.csv"
